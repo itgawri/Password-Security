@@ -23,31 +23,3 @@ for i in range(max_lock):
   print(f"Your account is locked for {lock_time_multiplier*locks} minutes")
 
 print(f"Assuming the hacker only got the password right with the last possible combination, your account would have been locked for {total_lock_time} minutes in total.")
-
-# PL------------------------------------------------------------------------------------------
-
-dlugosc_hasla = 6
-licznik = 1
-permutacje = 1
-
-while licznik <= dlugosc_hasla:
-  permutacje = permutacje * licznik
-  licznik += 1
-
-print(f"Liczba możliwych kombinacji hasła o długości {dlugosc_hasla} znaków wynosi: {permutacje}")
-
-proby = 5
-maksymalna_liczba_blokad = permutacje / proby
-maksymalna_liczba_blokad = int(maksymalna_liczba_blokad)
-print(f"Maksymalna liczba blokad konta to {maksymalna_liczba_blokad} razy.")
-
-blokady = 0
-calkowity_czas_blokady = 0
-mnoznik_czasu_blokady = 5
-
-for i in range(maksymalna_liczba_blokad):
-  blokady += 1
-  calkowity_czas_blokady += blokady * mnoznik_czasu_blokady
-  print(f"Twoje konto jest zablokowane na {mnoznik_czasu_blokady*blokady} minut")
-
-print(f"Zakładając, że haker odgadł hasło dopiero przy ostatniej możliwej kombinacji, Twoje konto byłoby zablokowane przez {calkowity_czas_blokady} minut w sumie.")
